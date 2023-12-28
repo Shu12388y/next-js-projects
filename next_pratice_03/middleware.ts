@@ -1,5 +1,3 @@
-import { request } from "http";
-import { url } from "inspector";
 import { NextRequest,NextResponse } from "next/server";
 
 // This middleware help us what will we the public path and private path
@@ -14,13 +12,13 @@ export async function middleware(request:NextRequest) {
     const path=request.nextUrl.pathname;
 
 
-    const publicPath = path === "/login" || path === "/signup";
+    const publicPath = path === "/login" || path === "/signup" || path==="/";
     
     const token = request.cookies.get("token")?.value || '';
 
 
     if(publicPath && token){
-        return NextResponse.redirect(new URL ('/',request.nextUrl))
+        return NextResponse.redirect(new URL ('/profile',request.nextUrl))
     }
     
     if(!publicPath && !token){
