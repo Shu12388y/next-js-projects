@@ -1,6 +1,13 @@
+"use client"
+
 import React from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 function navBar() {
+
+
+
+
   return (
     <>
     <nav className='flex justify-center mt-3'>

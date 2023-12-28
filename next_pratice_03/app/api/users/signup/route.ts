@@ -10,7 +10,7 @@ dbConfig()
 // create methods
 // post method
 
-export async function PostponedPathnameNormalizer(request:NextRequest){
+export async function POST(request:NextRequest){
   
     try {
         const reqBody= await request.json();

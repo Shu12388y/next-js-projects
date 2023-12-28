@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Axios } from "axios";
+import axios from "axios";
 import toast, { Toaster } from 'react-hot-toast';
 
 
@@ -23,11 +23,15 @@ function signUpPage() {
 
   async function signup() {
     try {
+      const response =  await axios.post("/api/users/signup",user);
+      console.log(response.data);
+      router.push("/login");
 
 
       
     } catch (error) {
       console.log(error)
+      userExist()
       
     }
   }
