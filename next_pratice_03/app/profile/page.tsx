@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import axios from 'axios'
 import Link from 'next/link'
@@ -32,6 +32,10 @@ async function profile() {
 
   
 }
+useEffect(()=>{
+profile()
+},[data])
+
   return (
     <>
     <div className='flex flex-col justify-center items-center min-h-screen py-2'>
@@ -46,8 +50,8 @@ async function profile() {
       </h3>
       <hr />
     <button onClick={logout} className='bg-blue-500 mt-4 hover:bg-blue-800 text-white font-bold py-2 px-4'>Logout</button>
-    <button onClick={profile} className='bg-orange-500 mt-4 hover:bg-blue-800 text-white font-bold py-2 px-4'>Profile</button>
-
+    <Link href={`/profile/${data}`}> <button className='bg-orange-500 mt-4 hover:bg-blue-800 text-white font-bold py-2 px-4'>Profile</button>
+</Link>
     <Toaster/>
     </div>
     </>
