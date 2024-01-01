@@ -1,7 +1,9 @@
+import userDataId from "@/lib/userdataId"
+
 export default async function UserDataId(id: string) {
   try {
     const userData: Promise<User> = userDataId(id);
-    const userid = await userData;
+    const userid = await userData.json();
     console.log(userid);
     return (
       <div>
