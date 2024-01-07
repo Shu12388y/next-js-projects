@@ -1,0 +1,12 @@
+.form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.width{
+    width: 15rem;
+    padding: 0.6rem;
+}
