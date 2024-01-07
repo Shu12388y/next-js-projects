@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./style.module.css"
 
-import UserProvider from "../context/UserProvider";
+import UserContext from "../context/UserContext";
 import { useState, useContext , useEffect} from "react";
 
 const Login = () => {
@@ -9,6 +9,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [disabled,setDisabled]=useState(false)
 
+  const { setUser } = useContext(UserContext);
 
   useEffect(()=>{
     if(email.length>0 && password.length>0){
@@ -20,9 +21,9 @@ const Login = () => {
 
   },[email,password])
 
-  const handleSubmit = () => {
-    // const { setuser } = useContext(UserProvider);
-    // console.log(email,password)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setUser({email,password})
   };
   return (
     <>
