@@ -9,7 +9,7 @@
     "type-check": "tsc",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "git":"git add . && git commit -m 'update' && git push" 
+    "git":"git add . && git commit -m 'update' && git push origin main -f" 
   },
   "dependencies": {
     "react": "^18.2.0",
