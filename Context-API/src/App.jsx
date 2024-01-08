@@ -1,19 +1,23 @@
 import './App.css'
-import Login from "./components/Login"
-import Profile from './components/Profile'
 import UserProvider from './context/UserProvider'
+import Login from './components/Login'
+import Profile from './components/Profile'
+import Icon from './components/Icon'
 function App() {
-
   return (
-    
-    <UserProvider>
-      <h1>Welcome to React App</h1>
-     <Login/>
-     <Profile/>
+<>
+<h1>Welcome to home page</h1>
+<UserProvider>
+  <Icon/> 
+  <Login/>
+  <Profile/>
 
-    </UserProvider>
-    
+</UserProvider>
+</>
+   
   )
 }
+
+
 
 export default App
