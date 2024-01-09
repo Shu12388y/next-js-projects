@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="space"></div>
+    <div class="space">
+      <div class="animate-element">
+        <h2>Animation Element</h2>
+        <p>This is a simple card with the title and description</p>
+      </div>
+    </div>
+    <div class="space"></div>
+
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.33/dist/lenis.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
+
+    <script>
+      // timeline in gsap
+
+      let t1 = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".animate-element",
+          start: "-50% center",
+          end: "200% center",
+          scrub: false,
+          markers: true,
+          toggleActions: "play pause reverse complete",
+        },
+      });
+
+      t1.to(".animate-element", {
+        x: 800,
+        duration: .5,
+      });
+
+      //smooth scroll
+      const lenis = new Lenis();
+
+      lenis.on("scroll", (e) => {
+      });
+
+      function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+      }
+
+      requestAnimationFrame(raf);
+    </script>
+  </body>
+</html>
