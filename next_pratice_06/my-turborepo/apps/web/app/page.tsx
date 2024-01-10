@@ -1,5 +1,4 @@
 "use client";
-
 import React, {useState,useEffect,useCallback,useRef, use} from 'react';
 
 
@@ -10,7 +9,6 @@ export default function Page(): JSX.Element {
   const [numbers, setNumbers] = useState(false);
   const [symbols, setSymbols] = useState(false);
   const [password, setPassword] = useState('');
-
 
 // ref hook
 const passwordRef=useRef(null);
