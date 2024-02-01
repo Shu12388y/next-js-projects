@@ -1,7 +1,7 @@
 import nodemailer from "nodemailer";
 import User from "@/model/userModel";
 import bcrypt from "bcryptjs";
-import { verify } from "crypto";
+
 
 export async function sendMail({ email, emailType, userId }: any) {
   try {
